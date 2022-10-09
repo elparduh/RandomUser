@@ -6,7 +6,7 @@
 //
 
 protocol UserGeneratorViewProtocol {
-  func showError(message : String)
+  func showError(_ error: String)
   func showLoader()
   func hideLoader()
   func diplayUserData(userData : UserData)

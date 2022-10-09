@@ -27,8 +27,23 @@ class UserGeneratorPresenter : UserGeneratorPresenterProtocol {
       case .success(let userData):
         self?.userGeneratorView.diplayUserData(userData: userData)
       case .failure(let error):
-        self?.userGeneratorView.showError(message: error.localizedDescription)
+        let titleAndMessage = self?.titleAndMessageError(for: error)
+        self?.userGeneratorView.showError(titleAndMessage?.1 ?? "Please try again.\nTap the button again")
       }
     }
+  }
+
+  func titleAndMessageError(for error: NetworkError) -> (String, String) {
+      let title: String
+      let message: String
+      switch error {
+      case .serverError:
+          title = "Server Error"
+          message = "We could not process your request. Please try again.\nTap the button again"
+      case .decodingError:
+          title = "Network Error"
+          message = "Ensure you are connected to the internet. Please try again."
+      }
+      return (title, message)
   }
 }

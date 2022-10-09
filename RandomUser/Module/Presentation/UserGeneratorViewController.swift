@@ -101,8 +101,8 @@ extension UserGeneratorViewController {
 }
 
 extension UserGeneratorViewController: UserGeneratorViewProtocol {
-  func showError(message: String) {
-    print(message)
+  func showError(_ error: String) {
+    configureErrorView(withMessage: error)
   }
 
   func showLoader() {
@@ -118,5 +118,13 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
     dataView.userImageView.loadImageUsingCache(withUrl: urlString)
     dataView.usernameLabel.text = "I'm \(userData.firstName ?? "") \(userData.lastName ?? "")"
     dataView.userDataLabel.text = "I am \(userData.age ?? 0) years old.\nI am from \(userData.country ?? "").\nPlease call me at \(userData.phone ?? "") or send me an email to \(userData.email ?? "")"
+    clearErrorMessageLabel()
+  }
+
+  func clearErrorMessageLabel() {
+    if errorMessageLabel.text != ""{
+      errorMessageLabel.text = String()
+      errorMessageLabel.isHidden = true
+    }
   }
 }
