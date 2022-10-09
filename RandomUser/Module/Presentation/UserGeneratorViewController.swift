@@ -11,6 +11,7 @@ class UserGeneratorViewController: UIViewController {
   var safeArea: UILayoutGuide!
   let dataView: DataCardView = DataCardView()
   let userGenerateButton: UIButton = UIButton(type:.system)
+  let errorMessageLabel = UILabel()
   private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
   private var presenter : UserGeneratorPresenterProtocol!
 
@@ -21,6 +22,11 @@ class UserGeneratorViewController: UIViewController {
     style()
     layout()
     initializePresenter()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    self.presenter.retrieveUserData()
   }
 }
 
@@ -33,11 +39,18 @@ extension UserGeneratorViewController {
     userGenerateButton.configuration?.imagePadding = 8
     userGenerateButton.setTitle("Generate", for: [])
     userGenerateButton.addTarget(self, action: #selector(generateTapped), for: .primaryActionTriggered)
+    errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+    errorMessageLabel.textAlignment = .center
+    errorMessageLabel.textColor = .systemRed
+    errorMessageLabel.numberOfLines = 0
+    errorMessageLabel.text = "Error failure"
+    errorMessageLabel.isHidden = true
   }
 
   private func layout() {
     view.addSubview(dataView)
     view.addSubview(userGenerateButton)
+    view.addSubview(errorMessageLabel)
     //DataView
     NSLayoutConstraint.activate([
       safeArea.topAnchor.constraint(equalTo: dataView.topAnchor),
@@ -50,6 +63,12 @@ extension UserGeneratorViewController {
       userGenerateButton.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
       userGenerateButton.trailingAnchor.constraint(equalTo: dataView.trailingAnchor),
       userGenerateButton.heightAnchor.constraint(equalToConstant: 48)
+    ])
+    ///ErrorLabel
+    NSLayoutConstraint.activate([
+      errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: dataView.bottomAnchor, multiplier: 2),
+      errorMessageLabel.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
+      errorMessageLabel.trailingAnchor.constraint(equalTo: dataView.trailingAnchor)
     ])
   }
 
@@ -64,6 +83,8 @@ extension UserGeneratorViewController {
   }
 
   private func configureErrorView(withMessage message: String) {
+    errorMessageLabel.isHidden = false
+    errorMessageLabel.text = message
     shakeButton()
   }
 
@@ -93,6 +114,9 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
   }
 
   func diplayUserData(userData: UserData) {
-    dataView.usernameLabel.text = (userData.firstName ?? "") + " " + (userData.lastName ?? "")
+    guard let urlString = userData.picture else { return }
+    dataView.userImageView.loadImageUsingCache(withUrl: urlString)
+    dataView.usernameLabel.text = "I'm \(userData.firstName ?? "") \(userData.lastName ?? "")"
+    dataView.userDataLabel.text = "I am \(userData.age ?? 0) years old.\nI am from \(userData.country ?? "").\nPlease call me at \(userData.phone ?? "") or send me an email to \(userData.email ?? "")"
   }
 }

@@ -35,24 +35,21 @@ extension DataCardView {
 
     userImageView.translatesAutoresizingMaskIntoConstraints = false
     userImageView.contentMode = .scaleAspectFit
-    userImageView.image = UIImage(named: "demo")
 
     usernameLabel.translatesAutoresizingMaskIntoConstraints = false
     usernameLabel.textAlignment = .center
     usernameLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
     usernameLabel.adjustsFontForContentSizeCategory = true
     usernameLabel.numberOfLines = 0
-    usernameLabel.text = "Harold West"
 
     dividerView.translatesAutoresizingMaskIntoConstraints = false
     dividerView.backgroundColor = .secondarySystemFill
 
     userDataLabel.translatesAutoresizingMaskIntoConstraints = false
-    userDataLabel.textAlignment = .justified
+    userDataLabel.textAlignment = .center
     userDataLabel.font = UIFont.preferredFont(forTextStyle: .body)
     userDataLabel.adjustsFontForContentSizeCategory = true
     userDataLabel.numberOfLines = 0
-    userDataLabel.text = "My date of birth is 11/6/1977. My address is 400 Washington Street. Please call me at (848) 640-0865 or send me an email to harold.west-example.com "
 
     layer.cornerRadius = 5
     clipsToBounds = true

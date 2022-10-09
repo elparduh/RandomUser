@@ -17,6 +17,7 @@ public struct UserData {
   let country: String?
   let email: String?
   let age: Int?
+  let phone: String?
   let picture: String?
   
   public init(ramdomUserModel: RamdomUserModel? = nil) {
@@ -29,6 +30,7 @@ public struct UserData {
     self.country = ramdomUserModel?.results?.first?.location?.country
     self.email = ramdomUserModel?.results?.first?.email
     self.age = ramdomUserModel?.results?.first?.dob?.age
-    self.picture = ramdomUserModel?.results?.first?.picture?.thumbnail
+    self.phone = ramdomUserModel?.results?.first?.phone
+    self.picture = ramdomUserModel?.results?.first?.picture?.large
   }
 }

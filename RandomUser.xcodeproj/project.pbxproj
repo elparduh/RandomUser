@@ -27,6 +27,7 @@
 		2738BE1128F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE1028F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift */; };
 		2738BE1328F2B1D5003BC528 /* UserGeneratorViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE1228F2B1D5003BC528 /* UserGeneratorViewProtocol.swift */; };
 		2738BE1528F2B31B003BC528 /* UserGeneratorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE1428F2B31B003BC528 /* UserGeneratorPresenter.swift */; };
+		277375D528F31110000914DC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277375D428F31110000914DC /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2738BE1028F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserDependencyAssembler.swift; sourceTree = "<group>"; };
 		2738BE1228F2B1D5003BC528 /* UserGeneratorViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGeneratorViewProtocol.swift; sourceTree = "<group>"; };
 		2738BE1428F2B31B003BC528 /* UserGeneratorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGeneratorPresenter.swift; sourceTree = "<group>"; };
+		277375D428F31110000914DC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		2738BDF128F26BD0003BC528 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				277375D428F31110000914DC /* Extensions.swift */,
 				2738BDF428F26D0D003BC528 /* Endpoint.swift */,
 				2738BDF628F26D85003BC528 /* Endpoint+URL.swift */,
 				2738BDFA28F26EC9003BC528 /* NetworkError.swift */,
@@ -250,6 +253,7 @@
 				2738BDD528F21516003BC528 /* AppDelegate.swift in Sources */,
 				2738BE1528F2B31B003BC528 /* UserGeneratorPresenter.swift in Sources */,
 				2738BE1328F2B1D5003BC528 /* UserGeneratorViewProtocol.swift in Sources */,
+				277375D528F31110000914DC /* Extensions.swift in Sources */,
 				2738BDF328F26C3E003BC528 /* Constants.swift in Sources */,
 				2738BDFD28F273BD003BC528 /* RandomUserEndPoint.swift in Sources */,
 				2738BE0B28F28F6E003BC528 /* UserData.swift in Sources */,
