@@ -38,7 +38,6 @@ extension UIImageView {
           activityIndicator.removeFromSuperview()
         }
       }
-
     }).resume()
   }
 }

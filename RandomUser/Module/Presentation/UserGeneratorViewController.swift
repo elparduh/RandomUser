@@ -14,11 +14,12 @@ class UserGeneratorViewController: UIViewController {
   let errorMessageLabel = UILabel()
   private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
   private var presenter : UserGeneratorPresenterProtocol!
+  let constants: Constants = Constants()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     safeArea = view.layoutMarginsGuide
-    navigationItem.title = "RandomUser"
+    navigationItem.title = constants.titleViewController
     style()
     layout()
     initializePresenter()
@@ -28,6 +29,10 @@ class UserGeneratorViewController: UIViewController {
     super.viewDidAppear(animated)
     self.presenter.retrieveUserData()
   }
+
+  private func initializePresenter() {
+    self.presenter = self.assemblerInjector.resolve(userGeneratorViewProtocol: self)
+  }
 }
 
 extension UserGeneratorViewController {
@@ -36,14 +41,14 @@ extension UserGeneratorViewController {
     dataView.translatesAutoresizingMaskIntoConstraints = false
     userGenerateButton.translatesAutoresizingMaskIntoConstraints = false
     userGenerateButton.configuration = .filled()
-    userGenerateButton.configuration?.imagePadding = 8
-    userGenerateButton.setTitle("Generate", for: [])
+    userGenerateButton.configuration?.imagePadding = constants.imagePadding
+    userGenerateButton.setTitle(constants.titleButton, for: [])
     userGenerateButton.addTarget(self, action: #selector(generateTapped), for: .primaryActionTriggered)
     errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
     errorMessageLabel.textAlignment = .center
     errorMessageLabel.textColor = .systemRed
     errorMessageLabel.numberOfLines = .zero
-    errorMessageLabel.text = "Error failure"
+    errorMessageLabel.text = constants.messageDefault
     errorMessageLabel.isHidden = true
   }
 
@@ -54,26 +59,22 @@ extension UserGeneratorViewController {
     //DataView
     NSLayoutConstraint.activate([
       safeArea.topAnchor.constraint(equalTo: dataView.topAnchor),
-      safeArea.trailingAnchor.constraint(equalToSystemSpacingAfter: dataView.trailingAnchor, multiplier: 1),
-      dataView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeArea.leadingAnchor, multiplier: 1)
+      safeArea.trailingAnchor.constraint(equalToSystemSpacingAfter: dataView.trailingAnchor, multiplier: constants.constraintSafeArea),
+      dataView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeArea.leadingAnchor, multiplier: constants.constraintDataView)
     ])
     //Button
     NSLayoutConstraint.activate([
-      userGenerateButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -8),
+      userGenerateButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -constants.constraintBottomButton),
       userGenerateButton.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
       userGenerateButton.trailingAnchor.constraint(equalTo: dataView.trailingAnchor),
-      userGenerateButton.heightAnchor.constraint(equalToConstant: 48)
+      userGenerateButton.heightAnchor.constraint(equalToConstant: constants.constraintHeightButton)
     ])
-    ///ErrorLabel
+    //ErrorLabel
     NSLayoutConstraint.activate([
-      errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: dataView.bottomAnchor, multiplier: 2),
+      errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: dataView.bottomAnchor, multiplier: constants.constraintTopErrorLabel),
       errorMessageLabel.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
       errorMessageLabel.trailingAnchor.constraint(equalTo: dataView.trailingAnchor)
     ])
-  }
-
-  private func initializePresenter() {
-    self.presenter = self.assemblerInjector.resolve(userGeneratorViewProtocol: self)
   }
 }
 
@@ -90,14 +91,13 @@ extension UserGeneratorViewController {
 
   private func shakeButton() {
     let animation = CAKeyframeAnimation()
-    animation.keyPath = "position.x"
-    animation.values = [0, 10, -10, 10, 0]
-    animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
-    animation.duration = 0.4
+    animation.keyPath = constants.animationPosition
+    animation.values = constants.animationValues
+    animation.keyTimes = constants.animationTimes
+    animation.duration = constants.animationDuration
     animation.isAdditive = true
-    userGenerateButton.layer.add(animation, forKey: "shake")
+    userGenerateButton.layer.add(animation, forKey: constants.animationKey)
   }
-
 }
 
 extension UserGeneratorViewController: UserGeneratorViewProtocol {
@@ -116,8 +116,8 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
   func diplayUserData(userData: UserData) {
     guard let urlString = userData.picture else { return }
     dataView.userImageView.loadImageUsingCache(withUrl: urlString)
-    dataView.usernameLabel.text = "I'm \(userData.firstName ?? "") \(userData.lastName ?? "")"
-    dataView.userDataLabel.text = "I am \(userData.age ?? 0) years old.\nI am from \(userData.country ?? "").\nPlease call me at \(userData.phone ?? "") or send me an email to \(userData.email ?? "")"
+    dataView.usernameLabel.text = "\(constants.greetingOne) \(userData.firstName ?? "") \(userData.lastName ?? "")"
+    dataView.userDataLabel.text = "\(constants.greetingTwo) \(userData.age ?? 0) \(constants.greetingThree) \(userData.country ?? "")\(constants.greetingFour) \(userData.phone ?? "") \(constants.greetingFive) \(userData.email ?? "")"
     clearErrorMessageLabel()
   }
 
