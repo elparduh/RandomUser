@@ -8,22 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		2738BDD528F21516003BC528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDD428F21516003BC528 /* AppDelegate.swift */; };
-		2738BDD728F21516003BC528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDD628F21516003BC528 /* SceneDelegate.swift */; };
-		2738BDD928F21516003BC528 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDD828F21516003BC528 /* ViewController.swift */; };
-		2738BDDC28F21516003BC528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2738BDDA28F21516003BC528 /* Main.storyboard */; };
+		2738BDD928F21516003BC528 /* UserGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDD828F21516003BC528 /* UserGeneratorViewController.swift */; };
 		2738BDDE28F21518003BC528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2738BDDD28F21518003BC528 /* Assets.xcassets */; };
 		2738BDE128F21518003BC528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2738BDDF28F21518003BC528 /* LaunchScreen.storyboard */; };
+		2738BDEC28F21C5F003BC528 /* DataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDEB28F21C5F003BC528 /* DataCardView.swift */; };
+		2738BDF328F26C3E003BC528 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDF228F26C3E003BC528 /* Constants.swift */; };
+		2738BDF528F26D0D003BC528 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDF428F26D0D003BC528 /* Endpoint.swift */; };
+		2738BDF728F26D85003BC528 /* Endpoint+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDF628F26D85003BC528 /* Endpoint+URL.swift */; };
+		2738BDF928F26E07003BC528 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDF828F26E07003BC528 /* Networking.swift */; };
+		2738BDFB28F26EC9003BC528 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDFA28F26EC9003BC528 /* NetworkError.swift */; };
+		2738BDFD28F273BD003BC528 /* RandomUserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BDFC28F273BD003BC528 /* RandomUserEndPoint.swift */; };
+		2738BE0128F27755003BC528 /* RamdomUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE0028F27755003BC528 /* RamdomUserModel.swift */; };
+		2738BE0328F27AC0003BC528 /* RamdomUserAPIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE0228F27AC0003BC528 /* RamdomUserAPIDataSource.swift */; };
+		2738BE0528F27E06003BC528 /* RamdomUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE0428F27E06003BC528 /* RamdomUserRepository.swift */; };
+		2738BE0728F289A9003BC528 /* RamdomUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE0628F289A9003BC528 /* RamdomUserUseCase.swift */; };
+		2738BE0B28F28F6E003BC528 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE0A28F28F6E003BC528 /* UserData.swift */; };
+		2738BE0D28F29FB9003BC528 /* RamdomUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE0C28F29FB9003BC528 /* RamdomUserProvider.swift */; };
+		2738BE1128F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE1028F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift */; };
+		2738BE1328F2B1D5003BC528 /* UserGeneratorViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE1228F2B1D5003BC528 /* UserGeneratorViewProtocol.swift */; };
+		2738BE1528F2B31B003BC528 /* UserGeneratorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738BE1428F2B31B003BC528 /* UserGeneratorPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2738BDD128F21516003BC528 /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2738BDD428F21516003BC528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2738BDD628F21516003BC528 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2738BDD828F21516003BC528 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2738BDDB28F21516003BC528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2738BDD828F21516003BC528 /* UserGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGeneratorViewController.swift; sourceTree = "<group>"; };
 		2738BDDD28F21518003BC528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2738BDE028F21518003BC528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2738BDE228F21518003BC528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2738BDEB28F21C5F003BC528 /* DataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardView.swift; sourceTree = "<group>"; };
+		2738BDF228F26C3E003BC528 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2738BDF428F26D0D003BC528 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2738BDF628F26D85003BC528 /* Endpoint+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URL.swift"; sourceTree = "<group>"; };
+		2738BDF828F26E07003BC528 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2738BDFA28F26EC9003BC528 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2738BDFC28F273BD003BC528 /* RandomUserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserEndPoint.swift; sourceTree = "<group>"; };
+		2738BE0028F27755003BC528 /* RamdomUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserModel.swift; sourceTree = "<group>"; };
+		2738BE0228F27AC0003BC528 /* RamdomUserAPIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserAPIDataSource.swift; sourceTree = "<group>"; };
+		2738BE0428F27E06003BC528 /* RamdomUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserRepository.swift; sourceTree = "<group>"; };
+		2738BE0628F289A9003BC528 /* RamdomUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserUseCase.swift; sourceTree = "<group>"; };
+		2738BE0A28F28F6E003BC528 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		2738BE0C28F29FB9003BC528 /* RamdomUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserProvider.swift; sourceTree = "<group>"; };
+		2738BE1028F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserDependencyAssembler.swift; sourceTree = "<group>"; };
+		2738BE1228F2B1D5003BC528 /* UserGeneratorViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGeneratorViewProtocol.swift; sourceTree = "<group>"; };
+		2738BE1428F2B31B003BC528 /* UserGeneratorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGeneratorPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +84,93 @@
 		2738BDD328F21516003BC528 /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
-				2738BDD428F21516003BC528 /* AppDelegate.swift */,
-				2738BDD628F21516003BC528 /* SceneDelegate.swift */,
-				2738BDD828F21516003BC528 /* ViewController.swift */,
-				2738BDDA28F21516003BC528 /* Main.storyboard */,
+				2738BDEE28F25AED003BC528 /* Constants */,
+				2738BDF128F26BD0003BC528 /* Core */,
+				2738BE0E28F2AC85003BC528 /* Module */,
+				2738BDE828F2181D003BC528 /* AppDelegate */,
 				2738BDDD28F21518003BC528 /* Assets.xcassets */,
 				2738BDDF28F21518003BC528 /* LaunchScreen.storyboard */,
 				2738BDE228F21518003BC528 /* Info.plist */,
 			);
 			path = RandomUser;
+			sourceTree = "<group>";
+		};
+		2738BDE828F2181D003BC528 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2738BDD428F21516003BC528 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2738BDED28F25A1C003BC528 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2738BE1228F2B1D5003BC528 /* UserGeneratorViewProtocol.swift */,
+				2738BE1428F2B31B003BC528 /* UserGeneratorPresenter.swift */,
+				2738BDEB28F21C5F003BC528 /* DataCardView.swift */,
+				2738BDD828F21516003BC528 /* UserGeneratorViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2738BDEE28F25AED003BC528 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2738BDF228F26C3E003BC528 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		2738BDEF28F25B0B003BC528 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2738BE0A28F28F6E003BC528 /* UserData.swift */,
+				2738BE0628F289A9003BC528 /* RamdomUserUseCase.swift */,
+				2738BE0C28F29FB9003BC528 /* RamdomUserProvider.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2738BDF028F25B2C003BC528 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2738BE0028F27755003BC528 /* RamdomUserModel.swift */,
+				2738BDFC28F273BD003BC528 /* RandomUserEndPoint.swift */,
+				2738BE0228F27AC0003BC528 /* RamdomUserAPIDataSource.swift */,
+				2738BE0428F27E06003BC528 /* RamdomUserRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2738BDF128F26BD0003BC528 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2738BDF428F26D0D003BC528 /* Endpoint.swift */,
+				2738BDF628F26D85003BC528 /* Endpoint+URL.swift */,
+				2738BDFA28F26EC9003BC528 /* NetworkError.swift */,
+				2738BDF828F26E07003BC528 /* Networking.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2738BE0E28F2AC85003BC528 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				2738BDF028F25B2C003BC528 /* Data */,
+				2738BDEF28F25B0B003BC528 /* Domain */,
+				2738BE0F28F2ACE5003BC528 /* DI */,
+				2738BDED28F25A1C003BC528 /* Presentation */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		2738BE0F28F2ACE5003BC528 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				2738BE1028F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +233,6 @@
 			files = (
 				2738BDE128F21518003BC528 /* LaunchScreen.storyboard in Resources */,
 				2738BDDE28F21518003BC528 /* Assets.xcassets in Resources */,
-				2738BDDC28F21516003BC528 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +243,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2738BDD928F21516003BC528 /* ViewController.swift in Sources */,
+				2738BE0328F27AC0003BC528 /* RamdomUserAPIDataSource.swift in Sources */,
+				2738BDD928F21516003BC528 /* UserGeneratorViewController.swift in Sources */,
+				2738BE0D28F29FB9003BC528 /* RamdomUserProvider.swift in Sources */,
+				2738BDFB28F26EC9003BC528 /* NetworkError.swift in Sources */,
 				2738BDD528F21516003BC528 /* AppDelegate.swift in Sources */,
-				2738BDD728F21516003BC528 /* SceneDelegate.swift in Sources */,
+				2738BE1528F2B31B003BC528 /* UserGeneratorPresenter.swift in Sources */,
+				2738BE1328F2B1D5003BC528 /* UserGeneratorViewProtocol.swift in Sources */,
+				2738BDF328F26C3E003BC528 /* Constants.swift in Sources */,
+				2738BDFD28F273BD003BC528 /* RandomUserEndPoint.swift in Sources */,
+				2738BE0B28F28F6E003BC528 /* UserData.swift in Sources */,
+				2738BE0128F27755003BC528 /* RamdomUserModel.swift in Sources */,
+				2738BDEC28F21C5F003BC528 /* DataCardView.swift in Sources */,
+				2738BE1128F2ADB0003BC528 /* RamdomUserDependencyAssembler.swift in Sources */,
+				2738BDF728F26D85003BC528 /* Endpoint+URL.swift in Sources */,
+				2738BDF528F26D0D003BC528 /* Endpoint.swift in Sources */,
+				2738BE0528F27E06003BC528 /* RamdomUserRepository.swift in Sources */,
+				2738BDF928F26E07003BC528 /* Networking.swift in Sources */,
+				2738BE0728F289A9003BC528 /* RamdomUserUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2738BDDA28F21516003BC528 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2738BDDB28F21516003BC528 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2738BDDF28F21518003BC528 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +403,7 @@
 				INFOPLIST_FILE = RandomUser/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +430,7 @@
 				INFOPLIST_FILE = RandomUser/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
