@@ -13,6 +13,7 @@ protocol UserGeneratorPresenterProtocol {
 class UserGeneratorPresenter : UserGeneratorPresenterProtocol {
   private var ramdomUserProvider: RamdomUserProviderProtocol
   private var userGeneratorView: UserGeneratorViewProtocol
+  let constants: Constants = Constants()
   
   init(ramdomUserProvider: RamdomUserProviderProtocol, userGeneratorView: UserGeneratorViewProtocol) {
     self.ramdomUserProvider = ramdomUserProvider
@@ -28,7 +29,7 @@ class UserGeneratorPresenter : UserGeneratorPresenterProtocol {
         self?.userGeneratorView.diplayUserData(userData: userData)
       case .failure(let error):
         let titleAndMessage = self?.titleAndMessageError(for: error)
-        self?.userGeneratorView.showError(titleAndMessage?.1 ?? "Please try again.\nTap the button again")
+        self?.userGeneratorView.showError(titleAndMessage?.1 ?? "")
       }
     }
   }
@@ -38,11 +39,11 @@ class UserGeneratorPresenter : UserGeneratorPresenterProtocol {
       let message: String
       switch error {
       case .serverError:
-          title = "Server Error"
-          message = "We could not process your request. Please try again.\nTap the button again"
+        title = constants.titleServerError
+        message = constants.messageServerError
       case .decodingError:
-          title = "Network Error"
-          message = "Ensure you are connected to the internet. Please try again."
+        title = constants.titleNetworkError
+        message = constants.messageNetworkError
       }
       return (title, message)
   }
