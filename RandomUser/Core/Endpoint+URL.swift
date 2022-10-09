@@ -9,10 +9,11 @@ import Foundation
 
 extension Endpoint {
   var url: URL {
+    let constants: Constants = Constants()
     var components = URLComponents()
-    components.scheme = Constants.SCHEME_URL
-    components.host = Constants.HOST
-    components.path = Constants.BASE_PATH + path
+    components.scheme = constants.schemeURL
+    components.host = constants.host
+    components.path = constants.basePath + path
     guard let url = components.url else {
       preconditionFailure("Invalid URL components: \(components)")
     }
