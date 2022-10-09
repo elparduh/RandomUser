@@ -42,7 +42,7 @@ extension UserGeneratorViewController {
     errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
     errorMessageLabel.textAlignment = .center
     errorMessageLabel.textColor = .systemRed
-    errorMessageLabel.numberOfLines = 0
+    errorMessageLabel.numberOfLines = .zero
     errorMessageLabel.text = "Error failure"
     errorMessageLabel.isHidden = true
   }

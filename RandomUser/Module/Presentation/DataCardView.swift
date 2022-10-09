@@ -13,7 +13,8 @@ class DataCardView: UIView {
   let usernameLabel = UILabel()
   let userDataLabel = UILabel()
   let dividerView: UIView = UIView()
-  
+  let constants: Constants = Constants()
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     style()
@@ -31,7 +32,7 @@ extension DataCardView {
 
     stackView.translatesAutoresizingMaskIntoConstraints = false
     stackView.axis = .vertical
-    stackView.spacing = 8
+    stackView.spacing = constants.spacing
 
     userImageView.translatesAutoresizingMaskIntoConstraints = false
     userImageView.contentMode = .scaleAspectFit
@@ -40,7 +41,7 @@ extension DataCardView {
     usernameLabel.textAlignment = .center
     usernameLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
     usernameLabel.adjustsFontForContentSizeCategory = true
-    usernameLabel.numberOfLines = 0
+    usernameLabel.numberOfLines = .zero
 
     dividerView.translatesAutoresizingMaskIntoConstraints = false
     dividerView.backgroundColor = .secondarySystemFill
@@ -49,9 +50,9 @@ extension DataCardView {
     userDataLabel.textAlignment = .center
     userDataLabel.font = UIFont.preferredFont(forTextStyle: .body)
     userDataLabel.adjustsFontForContentSizeCategory = true
-    userDataLabel.numberOfLines = 0
+    userDataLabel.numberOfLines = .zero
 
-    layer.cornerRadius = 5
+    layer.cornerRadius = constants.cornerRadius
     clipsToBounds = true
   }
 
@@ -63,11 +64,11 @@ extension DataCardView {
 
     addSubview(stackView)
     NSLayoutConstraint.activate([
-      stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
-      stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
-      trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
-      bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
+      stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: constants.constraintTop),
+      stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: constants.constraintLeading),
+      trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: constants.constraintTrailing),
+      bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: constants.constraintBottom)
     ])
-    dividerView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+    dividerView.heightAnchor.constraint(equalToConstant: constants.constraintHeight).isActive = true
   }
 }
