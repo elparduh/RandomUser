@@ -6,11 +6,11 @@
 //
 
 import Foundation
-
+// MARK: - RamdomUserRepositoryProtocol
 protocol RamdomUserRepositoryProtocol {
   func getRamdomUser(completion: @escaping (Result<RamdomUserModel,NetworkError>) -> Void)
 }
-
+// MARK: - RamdomUserRepository
 class RamdomUserRepository: RamdomUserRepositoryProtocol {
   private var ramdomUserAPIDataSource : RamdomUserAPIDataSourceProtocol
 

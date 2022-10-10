@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// MARK: - extension Endpoint
 extension Endpoint {
   static func getRandomUser() -> Self{
     return Endpoint(path: "/")

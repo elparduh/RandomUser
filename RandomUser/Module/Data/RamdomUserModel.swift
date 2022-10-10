@@ -11,7 +11,6 @@ public struct RamdomUserModel : Codable {
   let info : Info?
 
   enum CodingKeys: String, CodingKey {
-
     case results = "results"
     case info = "info"
   }
@@ -21,7 +20,6 @@ public struct RamdomUserModel : Codable {
     results = try values.decodeIfPresent([Results].self, forKey: .results)
     info = try values.decodeIfPresent(Info.self, forKey: .info)
   }
-
 }
 
 struct Results : Codable {
@@ -39,7 +37,6 @@ struct Results : Codable {
   let nat : String?
 
   enum CodingKeys: String, CodingKey {
-
     case gender = "gender"
     case name = "name"
     case location = "location"
@@ -69,7 +66,6 @@ struct Results : Codable {
     picture = try values.decodeIfPresent(Picture.self, forKey: .picture)
     nat = try values.decodeIfPresent(String.self, forKey: .nat)
   }
-
 }
 
 struct Info : Codable {
@@ -79,7 +75,6 @@ struct Info : Codable {
   let version : String?
 
   enum CodingKeys: String, CodingKey {
-
     case seed = "seed"
     case results = "results"
     case page = "page"
@@ -93,7 +88,6 @@ struct Info : Codable {
     page = try values.decodeIfPresent(Int.self, forKey: .page)
     version = try values.decodeIfPresent(String.self, forKey: .version)
   }
-
 }
 
 struct Name : Codable {
@@ -102,7 +96,6 @@ struct Name : Codable {
   let last : String?
 
   enum CodingKeys: String, CodingKey {
-
     case title = "title"
     case first = "first"
     case last = "last"
@@ -114,7 +107,6 @@ struct Name : Codable {
     first = try values.decodeIfPresent(String.self, forKey: .first)
     last = try values.decodeIfPresent(String.self, forKey: .last)
   }
-
 }
 
 struct Location : Codable {
@@ -127,7 +119,6 @@ struct Location : Codable {
   let timezone : Timezone?
 
   enum CodingKeys: String, CodingKey {
-
     case street = "street"
     case city = "city"
     case state = "state"
@@ -147,7 +138,6 @@ struct Location : Codable {
     coordinates = try values.decodeIfPresent(Coordinates.self, forKey: .coordinates)
     timezone = try values.decodeIfPresent(Timezone.self, forKey: .timezone)
   }
-
 }
 
 struct Login : Codable {
@@ -160,7 +150,6 @@ struct Login : Codable {
   let sha256 : String?
 
   enum CodingKeys: String, CodingKey {
-
     case uuid = "uuid"
     case username = "username"
     case password = "password"
@@ -180,7 +169,6 @@ struct Login : Codable {
     sha1 = try values.decodeIfPresent(String.self, forKey: .sha1)
     sha256 = try values.decodeIfPresent(String.self, forKey: .sha256)
   }
-
 }
 
 struct Dob : Codable {
@@ -188,7 +176,6 @@ struct Dob : Codable {
   let age : Int?
 
   enum CodingKeys: String, CodingKey {
-
     case date = "date"
     case age = "age"
   }
@@ -198,7 +185,6 @@ struct Dob : Codable {
     date = try values.decodeIfPresent(String.self, forKey: .date)
     age = try values.decodeIfPresent(Int.self, forKey: .age)
   }
-
 }
 
 struct Registered : Codable {
@@ -206,7 +192,6 @@ struct Registered : Codable {
   let age : Int?
 
   enum CodingKeys: String, CodingKey {
-
     case date = "date"
     case age = "age"
   }
@@ -223,7 +208,6 @@ struct Id : Codable {
   let value : String?
 
   enum CodingKeys: String, CodingKey {
-
     case name = "name"
     case value = "value"
   }
@@ -233,7 +217,6 @@ struct Id : Codable {
     name = try values.decodeIfPresent(String.self, forKey: .name)
     value = try values.decodeIfPresent(String.self, forKey: .value)
   }
-
 }
 
 struct Picture : Codable {
@@ -242,7 +225,6 @@ struct Picture : Codable {
   let thumbnail : String?
 
   enum CodingKeys: String, CodingKey {
-
     case large = "large"
     case medium = "medium"
     case thumbnail = "thumbnail"
@@ -254,7 +236,6 @@ struct Picture : Codable {
     medium = try values.decodeIfPresent(String.self, forKey: .medium)
     thumbnail = try values.decodeIfPresent(String.self, forKey: .thumbnail)
   }
-
 }
 
 struct Street : Codable {
@@ -262,7 +243,6 @@ struct Street : Codable {
   let name : String?
 
   enum CodingKeys: String, CodingKey {
-
     case number = "number"
     case name = "name"
   }
@@ -272,7 +252,6 @@ struct Street : Codable {
     number = try values.decodeIfPresent(Int.self, forKey: .number)
     name = try values.decodeIfPresent(String.self, forKey: .name)
   }
-
 }
 
 struct Coordinates : Codable {
@@ -280,7 +259,6 @@ struct Coordinates : Codable {
   let longitude : String?
 
   enum CodingKeys: String, CodingKey {
-
     case latitude = "latitude"
     case longitude = "longitude"
   }
@@ -290,7 +268,6 @@ struct Coordinates : Codable {
     latitude = try values.decodeIfPresent(String.self, forKey: .latitude)
     longitude = try values.decodeIfPresent(String.self, forKey: .longitude)
   }
-
 }
 
 struct Timezone : Codable {
@@ -298,7 +275,6 @@ struct Timezone : Codable {
   let description : String?
 
   enum CodingKeys: String, CodingKey {
-
     case offset = "offset"
     case description = "description"
   }
@@ -308,5 +284,4 @@ struct Timezone : Codable {
     offset = try values.decodeIfPresent(String.self, forKey: .offset)
     description = try values.decodeIfPresent(String.self, forKey: .description)
   }
-
 }

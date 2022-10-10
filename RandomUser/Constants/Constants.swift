@@ -5,7 +5,7 @@
 //  Created by Juan Ticante Vicente on 08/10/22.
 //
 import UIKit
-
+// MARK: - Constants
 struct Constants {
   // MARK: - Core
   var schemeURL: String { return "https" }

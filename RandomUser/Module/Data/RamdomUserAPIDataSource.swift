@@ -6,12 +6,12 @@
 //
 
 import Foundation
-
+// MARK: - RamdomUserAPIDataSourceProtocol
 protocol RamdomUserAPIDataSourceProtocol {
   var networking: NetworkingProtocol { get }
   func getRamdomUser(completion: @escaping (Result<RamdomUserModel,NetworkError>) -> Void)
 }
-
+// MARK: - RamdomUserAPIDataSource
 class RamdomUserAPIDataSource: RamdomUserAPIDataSourceProtocol {
   var networking: NetworkingProtocol
 

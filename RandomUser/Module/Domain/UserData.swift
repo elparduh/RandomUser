@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// MARK: - UserData
 public struct UserData {
   let firstName: String?
   let lastName: String?

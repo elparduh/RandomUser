@@ -6,11 +6,11 @@
 //
 
 import Foundation
-
+// MARK: - RamdomUserProviderProtocol
 protocol RamdomUserProviderProtocol {
   func getRamdomUserProvider() -> RamdomUserUseCase
 }
-
+// MARK: - RamdomUserProvider
 class RamdomUserProvider: RamdomUserProviderProtocol {
   private var ramdomUserRepository: RamdomUserRepositoryProtocol
   

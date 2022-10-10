@@ -6,11 +6,11 @@
 //
 
 import Foundation
-
+// MARK: - NetworkingProtocol
 protocol NetworkingProtocol: AnyObject {
   func get<T>(type: T.Type,url: URL, completion: @escaping (Result<T,NetworkError>) -> Void) where T: Decodable
 }
-
+// MARK: - Networking
 final class Networking: NetworkingProtocol {
   func get<T>(type: T.Type, url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
     URLSession.shared.dataTask(with: url) { data, response, error in

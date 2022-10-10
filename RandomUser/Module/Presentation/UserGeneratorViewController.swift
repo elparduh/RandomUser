@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
+// MARK: - UserGeneratorViewController
 class UserGeneratorViewController: UIViewController {
+  // MARK: - Properties
   var safeArea: UILayoutGuide!
   let dataView: DataCardView = DataCardView()
   let userGenerateButton: UIButton = UIButton(type:.system)
@@ -15,7 +16,7 @@ class UserGeneratorViewController: UIViewController {
   private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
   private var presenter : UserGeneratorPresenterProtocol!
   let constants: Constants = Constants()
-
+  // MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     safeArea = view.layoutMarginsGuide
@@ -34,16 +35,20 @@ class UserGeneratorViewController: UIViewController {
     self.presenter = self.assemblerInjector.resolve(userGeneratorViewProtocol: self)
   }
 }
-
+// MARK: - UI
 extension UserGeneratorViewController {
   private func style() {
+    //UserGeneratorViewController
     view.backgroundColor = .systemBackground
+    //DataView
     dataView.translatesAutoresizingMaskIntoConstraints = false
+    //Button
     userGenerateButton.translatesAutoresizingMaskIntoConstraints = false
     userGenerateButton.configuration = .filled()
     userGenerateButton.configuration?.imagePadding = constants.imagePadding
     userGenerateButton.setTitle(constants.titleButton, for: [])
     userGenerateButton.addTarget(self, action: #selector(generateTapped), for: .primaryActionTriggered)
+    //ErrorLabel
     errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
     errorMessageLabel.textAlignment = .center
     errorMessageLabel.textColor = .systemRed
@@ -77,7 +82,7 @@ extension UserGeneratorViewController {
     ])
   }
 }
-
+// MARK: - Actions
 extension UserGeneratorViewController {
   @objc func generateTapped(sender: UIButton) {
     self.presenter.retrieveUserData()
@@ -99,7 +104,7 @@ extension UserGeneratorViewController {
     userGenerateButton.layer.add(animation, forKey: constants.animationKey)
   }
 }
-
+// MARK: - Show Data and Response
 extension UserGeneratorViewController: UserGeneratorViewProtocol {
   func showError(_ error: String) {
     configureErrorView(withMessage: error)

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// MARK: - RamdomUserDependencyAssembler
 protocol RamdomUserDependencyAssembler {
   func resolve(userGeneratorViewProtocol: UserGeneratorViewProtocol) -> UserGeneratorPresenterProtocol
   func resolve() -> RamdomUserProviderProtocol
@@ -14,7 +14,7 @@ protocol RamdomUserDependencyAssembler {
   func resolve() -> RamdomUserAPIDataSourceProtocol
   func resolve() -> NetworkingProtocol
 }
-
+// MARK: - extension RamdomUserDependencyAssembler
 extension RamdomUserDependencyAssembler {
   func resolve(userGeneratorViewProtocol: UserGeneratorViewProtocol) -> UserGeneratorPresenterProtocol {
     return UserGeneratorPresenter(ramdomUserProvider: resolve(), userGeneratorView: userGeneratorViewProtocol)
@@ -36,7 +36,5 @@ extension RamdomUserDependencyAssembler {
     return Networking()
   }
 }
-
-class RamdomUserAssemblerInjector : RamdomUserDependencyAssembler {
-
-}
+// MARK: - RamdomUserAssemblerInjector
+class RamdomUserAssemblerInjector : RamdomUserDependencyAssembler {}

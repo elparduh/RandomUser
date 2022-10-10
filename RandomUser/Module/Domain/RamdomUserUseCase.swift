@@ -6,11 +6,11 @@
 //
 
 import Foundation
-
+// MARK: - RamdomUserUseCaseProtocol
 protocol RamdomUserUseCaseProtocol {
   func execute(completion: @escaping (Result<UserData,NetworkError>) -> Void)
 }
-
+// MARK: - RamdomUserUseCase
 class RamdomUserUseCase: RamdomUserUseCaseProtocol {
   private var ramdomUserRepository: RamdomUserRepositoryProtocol
   
